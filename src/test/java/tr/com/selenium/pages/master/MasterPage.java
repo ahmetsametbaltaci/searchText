@@ -62,7 +62,7 @@ public class MasterPage extends ProjectSeleniumWebDriverImpl implements MasterPa
         LogUtils.printPropertyFooter();
         strArr.clear();
         if (!isValid) {
-            throw new SeleniumExceptionHandle("One or more item(s) not matched. Please check item(s)...!!!");
+            log.error("One or more item(s) not matched. Please check item(s)...!!!");
         }
     }
 
