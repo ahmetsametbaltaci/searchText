@@ -1,0 +1,9 @@
+/out/
+/target/
+/reports/
+/logs/
+/.idea/
+/.gauge/
+/*.iml
+
+
