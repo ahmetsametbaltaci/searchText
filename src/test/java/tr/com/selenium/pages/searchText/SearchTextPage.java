@@ -26,16 +26,15 @@ public class SearchTextPage extends MasterPage implements SearchTextPageElements
      *
      * @param text aranacak kelime bilgisi string olarak parametre verilir.
      */
-    public void checkPageSources(String text) {
+    public void checkPageSources(String pageSource,String text) {
         log.info("GETTING Page Source");
         String[] str;
         Locale trlocale = new Locale("tr", "TR");
-        String pageSource = webDriver.getPageSource().toLowerCase(trlocale);
         if (pageSource.contains(text.toLowerCase(trlocale))) {
             str = new String[]{webDriver.getCurrentUrl(), text, "CONTAINS", "TRUE"};
-            log.error("Text is FOUND - ".concat(text));
+            log.info("Text FOUND - ".concat(text));
         } else {
-            log.info("Don't Find to Text - ".concat(text));
+            log.warn("Text NOT FOUND ".concat(text));
             str = new String[]{webDriver.getCurrentUrl(), text, "CONTAINS", "FALSE"};
         }
         strArr.add(str);
@@ -48,8 +47,10 @@ public class SearchTextPage extends MasterPage implements SearchTextPageElements
     public void openWebSiteAndSearchText() {
         for (String url : ProjectUtils.getDataFromFile("urlList.csv")) {
             openWebSite(url);
+            Locale trlocale = new Locale("tr", "TR");
+            String pageSource = webDriver.getPageSource().toLowerCase(trlocale);
             for (String searchText : ProjectUtils.getDataFromFile("searchText.txt")) {
-                checkPageSources(searchText);
+                checkPageSources(pageSource,searchText);
             }
         }
         compareArray(strArr);
