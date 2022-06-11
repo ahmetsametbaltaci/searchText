@@ -30,7 +30,7 @@ public class SearchTextPage extends MasterPage implements SearchTextPageElements
         log.info("GETTING Page Source");
         String[] str;
         Locale trlocale = new Locale("tr", "TR");
-        if (pageSource.contains(text.toLowerCase(trlocale))) {
+        if (pageSource.toLowerCase(trlocale).contains(text.toLowerCase(trlocale))) {
             str = new String[]{webDriver.getCurrentUrl(), text, "CONTAINS", "TRUE"};
             log.info("Text FOUND - ".concat(text));
         } else {
@@ -47,8 +47,7 @@ public class SearchTextPage extends MasterPage implements SearchTextPageElements
     public void openWebSiteAndSearchText() {
         for (String url : ProjectUtils.getDataFromFile("urlList.csv")) {
             openWebSite(url);
-            Locale trlocale = new Locale("tr", "TR");
-            String pageSource = webDriver.getPageSource().toLowerCase(trlocale);
+            String pageSource = webDriver.getPageSource();
             for (String searchText : ProjectUtils.getDataFromFile("searchText.txt")) {
                 checkPageSources(pageSource,searchText);
             }
