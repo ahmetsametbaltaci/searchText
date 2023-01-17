@@ -3,6 +3,7 @@ package tr.com.selenium.customFramework;
 
 import com.thoughtworks.gauge.*;
 import tr.com.selenium.utils.PropertyUtils;
+import tr.com.selenium.utils.TranslationUtils;
 
 
 public class ProjectHook extends ProjectSeleniumWebDriverImpl {
@@ -12,6 +13,7 @@ public class ProjectHook extends ProjectSeleniumWebDriverImpl {
     public void beforeSuite(ExecutionContext context) {
         PropertyUtils.initUserProperties();
         PropertyUtils.initDefaultProperties();
+        TranslationUtils.setLanguage(PropertyUtils.getCultureCode());
         setup();
     }
 
@@ -22,7 +24,6 @@ public class ProjectHook extends ProjectSeleniumWebDriverImpl {
 
     @BeforeSpec
     public void beforeSpec(ExecutionContext context) {
-
 
     }
 

@@ -4,6 +4,6 @@ import org.openqa.selenium.By;
 
 public interface MasterPageElement {
 
-    By IMG_LOGO = By.xpath("//img[contains(@src,'logo')]");
+ String MODAL_SPAN = "//div[@id='error-box-wrapper']//span[text()='%s']";
 
 }

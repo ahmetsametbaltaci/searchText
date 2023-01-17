@@ -15,7 +15,7 @@ public class PropertyUtils {
     private static Properties userProperties;
 
 
-    public static Properties readPropertyFileFromFile(String propertyFileFullPath) {
+    public static Properties initPropertyFile(String propertyFileFullPath) {
         InputStream inputStream = null;
         try {
             inputStream = new FileInputStream(propertyFileFullPath);
@@ -73,14 +73,14 @@ public class PropertyUtils {
     public static void initUserProperties() {
         if (userProperties != null)
             return;
-        userProperties = readPropertyFileFromFile(FileDefinationUtils.getUserPropertyFilePath());
+        userProperties = initPropertyFile(FileDefinationUtils.getUserPropertyFilePath());
     }
 
     public static void initDefaultProperties() {
         if (defaultProperties != null)
             return;
 
-        defaultProperties = readPropertyFileFromFile(FileDefinationUtils.getDefaultPropertyFilePath());
+        defaultProperties = initPropertyFile(FileDefinationUtils.getDefaultPropertyFilePath());
     }
 
     public static String getUserProperties(String propertyKey){

@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>tr.com.selenium.textFinder</groupId>
-    <artifactId>searchText</artifactId>
-    <version>${text.finder.version}</version>
+    <groupId>tr.com.selenium.havelsan</groupId>
+    <artifactId>havelsanOdev</artifactId>
+    <version>${havelsan.odev.version}</version>
     <packaging>jar</packaging>
-    <name>search-text-PoC</name>
+    <name>havelsan</name>
 
     <properties>
         <cultureCode>tr_TR</cultureCode>

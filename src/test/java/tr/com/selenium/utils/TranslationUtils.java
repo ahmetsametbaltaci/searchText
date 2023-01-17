@@ -21,7 +21,7 @@ public class TranslationUtils {
             log.info("Culture Code: " + cultureCode);
         }
         String langFilePath = FileDefinationUtils.getProjectRootPath()+ "/_propFiles/translations/" + PropertyUtils.getCultureCode() + ".properties";
-        properties = PropertyUtils.readPropertyFileFromFile(langFilePath);
+        properties = PropertyUtils.initPropertyFile(langFilePath);
     }
 
     public static String getTranslation(String translationKey) {

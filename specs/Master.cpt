@@ -1,0 +1,8 @@
+Created by abaltaci on 17.01.2023
+
+This is a concept file with following syntax for each concept.
+# Uygulamaya email ve sifre ile login ol ve <validationMsg> hata mesajini dogrula <table>
+* Uygulamayi ac
+* Login Butonuna tikla
+* Kullanici adi ve sifre bilgisini gir <table>
+* <validationMsg> Validasyon mesajini dogrula

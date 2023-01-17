@@ -34,16 +34,8 @@ public class FileDefinationUtils {
         return rootPath+"\\env\\"+PropertyUtils.getPropertyValuesFromPomFile("testEnvironment") + "\\";
     }
 
-    public static String getPocFilePath(){
-        return PropertyUtils.getDefaultProperties("poc-file-path");
-    }
-
     public static String getWebDriverPath(){
-        return getPocFilePath().concat("\\webdriver\\chromedriver.exe");
-    }
-
-    public static String getDataFilesPath(){
-        return getPocFilePath().concat("\\dataFiles\\");
+        return getProjectRootPath().concat("\\chromedriver.exe");
     }
 
 }
